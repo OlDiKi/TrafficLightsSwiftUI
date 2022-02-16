@@ -7,10 +7,21 @@
 
 import SwiftUI
 
+enum CurrentLight {
+    case red, yellow, green
+}
+
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        ZStack {
+            Color.orange.ignoresSafeArea()
+            
+            VStack(spacing: 30) {
+                ColorCircle(color: .red)
+                ColorCircle(color: .yellow)
+                ColorCircle(color: .green)
+            }
+        }
     }
 }
 
